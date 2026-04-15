@@ -7,6 +7,13 @@ const ROUTE_TITLES: Array<{ pattern: RegExp; title: string }> = [
   { pattern: /^\/members\/.+\/edit$/, title: '교인 수정' },
   { pattern: /^\/members\/.+$/, title: '교인 상세' },
   { pattern: /^\/members$/, title: '교인 관리' },
+  { pattern: /^\/donations\/new$/, title: '헌금 등록' },
+  { pattern: /^\/donations\/.+\/edit$/, title: '헌금 수정' },
+  { pattern: /^\/donations$/, title: '헌금 관리' },
+  { pattern: /^\/notices\/new$/, title: '공지 작성' },
+  { pattern: /^\/notices\/.+\/edit$/, title: '공지 수정' },
+  { pattern: /^\/notices\/.+$/, title: '공지 상세' },
+  { pattern: /^\/notices$/, title: '공지사항' },
   { pattern: /^\/dashboard$/, title: '대시보드' },
 ]
 
