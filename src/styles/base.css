@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Base Styles — HTML element defaults
+   Uses shadcn/ui semantic variables (--foreground, --primary, --muted, etc.)
+   and raw tokens (--font-*, --text-*, --space-*) from tokens.css.
+   ========================================================================== */
+
+@layer base {
+  /* --------------------------------------------------------------------------
+     Typography
+  -------------------------------------------------------------------------- */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--foreground);
+  }
+
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  h3 { font-size: var(--text-2xl); }
+  h4 { font-size: var(--text-xl); }
+  h5 { font-size: var(--text-lg); }
+  h6 { font-size: var(--text-base); }
+
+  p {
+    line-height: var(--leading-relaxed);
+    color: var(--foreground);
+  }
+
+  a {
+    color: var(--primary);
+    transition: opacity var(--duration-fast) var(--ease-default);
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  strong {
+    font-weight: var(--font-semibold);
+  }
+
+  code, kbd, samp, pre {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  code {
+    background-color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.15em 0.4em;
+  }
+
+  pre {
+    background-color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    overflow-x: auto;
+  }
+
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  /* --------------------------------------------------------------------------
+     Form Elements
+  -------------------------------------------------------------------------- */
+  input, textarea, select {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--foreground);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    transition: border-color var(--duration-fast) var(--ease-default),
+                box-shadow   var(--duration-fast) var(--ease-default);
+    width: 100%;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 20%, transparent);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  /* --------------------------------------------------------------------------
+     Divider
+  -------------------------------------------------------------------------- */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: var(--space-6) 0;
+  }
+}

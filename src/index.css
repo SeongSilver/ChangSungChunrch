@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@import './styles/tokens.css';
+@import './styles/reset.css';
+@import './styles/base.css';
+
+/* --------------------------------------------------------------------------
+   Dark mode via .dark class (shadcn/ui convention)
+-------------------------------------------------------------------------- */
+@custom-variant dark (&:is(.dark *));
+
+/* --------------------------------------------------------------------------
+   Tailwind theme — map shadcn/ui semantic vars to Tailwind utilities
+   e.g. bg-background, text-foreground, bg-primary, rounded-lg, etc.
+-------------------------------------------------------------------------- */
+@theme inline {
+  /* Radius — shadcn/ui uses a single --radius base + calc offsets */
+  --radius-sm:   calc(var(--radius) - 4px);
+  --radius-md:   calc(var(--radius) - 2px);
+  --radius-lg:   var(--radius);
+  --radius-xl:   calc(var(--radius) + 4px);
+
+  /* Colors */
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+  --color-card:               var(--card);
+  --color-card-foreground:    var(--card-foreground);
+  --color-popover:            var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:          var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+  --color-accent:             var(--accent);
+  --color-accent-foreground:  var(--accent-foreground);
+  --color-destructive:        var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:             var(--border);
+  --color-input:              var(--input);
+  --color-ring:               var(--ring);
+  --color-chart-1:            var(--chart-1);
+  --color-chart-2:            var(--chart-2);
+  --color-chart-3:            var(--chart-3);
+  --color-chart-4:            var(--chart-4);
+  --color-chart-5:            var(--chart-5);
+
+  /* Sidebar */
+  --color-sidebar:                    var(--sidebar);
+  --color-sidebar-foreground:         var(--sidebar-foreground);
+  --color-sidebar-primary:            var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:             var(--sidebar-accent);
+  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
+  --color-sidebar-border:             var(--sidebar-border);
+  --color-sidebar-ring:               var(--sidebar-ring);
+}
+
+/* --------------------------------------------------------------------------
+   Semantic variables — Light mode (:root) and Dark mode (.dark)
+   Values reference raw palette tokens from tokens.css.
+-------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --background:           var(--color-neutral-0);
+    --foreground:           var(--color-neutral-900);
+
+    --card:                 var(--color-neutral-0);
+    --card-foreground:      var(--color-neutral-900);
+
+    --popover:              var(--color-neutral-0);
+    --popover-foreground:   var(--color-neutral-900);
+
+    --primary:              var(--color-primary-600);
+    --primary-foreground:   var(--color-neutral-0);
+
+    --secondary:            var(--color-neutral-100);
+    --secondary-foreground: var(--color-neutral-900);
+
+    --muted:                var(--color-neutral-100);
+    --muted-foreground:     var(--color-neutral-500);
+
+    --accent:               var(--color-neutral-100);
+    --accent-foreground:    var(--color-neutral-900);
+
+    --destructive:          var(--color-error);
+    --destructive-foreground: var(--color-neutral-0);
+
+    --border:               var(--color-neutral-200);
+    --input:                var(--color-neutral-200);
+    --ring:                 var(--color-primary-400);
+    --radius:               0.5rem;
+
+    --chart-1:              var(--color-primary-500);
+    --chart-2:              var(--color-success);
+    --chart-3:              var(--color-warning);
+    --chart-4:              var(--color-error);
+    --chart-5:              var(--color-info);
+
+    --sidebar:                    var(--color-neutral-50);
+    --sidebar-foreground:         var(--color-neutral-900);
+    --sidebar-primary:            var(--color-primary-600);
+    --sidebar-primary-foreground: var(--color-neutral-0);
+    --sidebar-accent:             var(--color-neutral-100);
+    --sidebar-accent-foreground:  var(--color-neutral-900);
+    --sidebar-border:             var(--color-neutral-200);
+    --sidebar-ring:               var(--color-primary-400);
+  }
+
+  .dark {
+    --background:           var(--color-neutral-900);
+    --foreground:           var(--color-neutral-50);
+
+    --card:                 var(--color-neutral-800);
+    --card-foreground:      var(--color-neutral-50);
+
+    --popover:              var(--color-neutral-800);
+    --popover-foreground:   var(--color-neutral-50);
+
+    --primary:              var(--color-primary-400);
+    --primary-foreground:   var(--color-neutral-900);
+
+    --secondary:            var(--color-neutral-800);
+    --secondary-foreground: var(--color-neutral-50);
+
+    --muted:                var(--color-neutral-800);
+    --muted-foreground:     var(--color-neutral-400);
+
+    --accent:               var(--color-neutral-800);
+    --accent-foreground:    var(--color-neutral-50);
+
+    --destructive:          var(--color-error-dark);
+    --destructive-foreground: var(--color-neutral-0);
+
+    --border:               var(--color-neutral-700);
+    --input:                var(--color-neutral-700);
+    --ring:                 var(--color-primary-500);
+
+    --chart-1:              var(--color-primary-400);
+    --chart-2:              var(--color-success);
+    --chart-3:              var(--color-warning);
+    --chart-4:              var(--color-error);
+    --chart-5:              var(--color-info);
+
+    --sidebar:                    var(--color-neutral-800);
+    --sidebar-foreground:         var(--color-neutral-50);
+    --sidebar-primary:            var(--color-primary-400);
+    --sidebar-primary-foreground: var(--color-neutral-900);
+    --sidebar-accent:             var(--color-neutral-700);
+    --sidebar-accent-foreground:  var(--color-neutral-50);
+    --sidebar-border:             var(--color-neutral-700);
+    --sidebar-ring:               var(--color-primary-500);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/workspace//**)",
+      "Read(//d//**)",
+      "Bash(npm create *)",
+      "Bash(npm_config_yes=true npx create-vite@latest *)",
+      "Bash(npx create-vite@latest *)",
+      "Bash(rm -f D:/workspace/test/index.html D:/workspace/test/package.json D:/workspace/test/vite.config.js)",
+      "Bash(rm -rf D:/workspace/test/src)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx shadcn@latest add button input label select textarea badge table dialog dropdown-menu separator sheet card scroll-area --yes)"
+    ]
+  }
+}
